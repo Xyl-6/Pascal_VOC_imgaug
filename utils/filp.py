@@ -15,7 +15,7 @@ def horizontal_flip(image_path, xml_path):
         xmax = int(obj.find('bndbox').find('xmax').text)
         obj.find('bndbox').find('xmin').text = str(width - xmax)
         obj.find('bndbox').find('xmax').text = str(width - xmin)
-    tree.write(xml_path.replace('.xml', '_flipped.xml'))
+    tree.write(xml_path.replace('.xml', '_flipped1.xml'))
 
 def vertical_flip(image_path, xml_path):
     image = cv2.imread(image_path)
@@ -30,4 +30,4 @@ def vertical_flip(image_path, xml_path):
         ymax = int(obj.find('bndbox').find('ymax').text)
         obj.find('bndbox').find('ymin').text = str(height - ymax)
         obj.find('bndbox').find('ymax').text = str(height - ymin)
-    tree.write(xml_path.replace('.xml', '_flipped.xml'))
+    tree.write(xml_path.replace('.xml', '_flipped0.xml'))
